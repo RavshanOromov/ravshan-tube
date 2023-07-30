@@ -13,20 +13,20 @@ const Main = () => {
 
   console.log(process.env.REACT_APP_PUBLIC_KEY);
    
-  useEffect(() => {
-    ApiService.fetching('search').then(data => console.log(data))
-  }, [])
-
   // useEffect(() => {
-  // const getData = async () => {
-  //   try {
-  //     const data = await ApiService.fetching(`search?part=snippet&q=${selectedCategory}`)
-  //   setVideos(data.items)
-  //   } catch (error) { 
-  //   console.log(error)
-  //   }}
+  //   ApiService.fetching('search').then(data => setVideos(data))
+  // }, [])
 
-  // getData()}, [])
+  useEffect(() => {
+  const getData = async () => {
+    try {
+      const data = await ApiService.fetching(`search?part=snippet&q=${selectedCategory}`)
+    setVideos(data.items)
+    } catch (error) { 
+    console.log(error)
+    }}
+
+  getData()}, [])
 
   return (
     <Stack>
@@ -38,7 +38,9 @@ const Main = () => {
           <Typography variant={'h4'} fontWeight={'bold'} mb={2}>
             {selectedCategory} <span style={{ color: colors.secondary }}>videos</span>
           </Typography>
+          videos
           <Videos videos={videos} />
+          {/* {videos.items.map(c => c.kind)} */}
         </Container>
       </Box>
     </Stack>

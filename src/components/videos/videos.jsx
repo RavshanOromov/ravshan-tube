@@ -1,9 +1,9 @@
 import { Stack, Box} from '@mui/material'
-import { VideoCard} from '../'
+import { VideoCard} from '..'
 import React from 'react'
 
 const Videos = ({ videos }) => {
-  return
+  return (
    <Stack
      width={"100%"}
      direction={'row'}
@@ -12,14 +12,14 @@ const Videos = ({ videos }) => {
      alignItems={'center'}
      gap={2}
    >
-    {videos.map(item => (
+    {videos.map((item) => (
       <Box key={item.id.videoId}> {item.id.videoId && <VideoCard video={item} />}
 
       </Box>
     ))}
    </Stack>
 
-    
+)
 }
 
 export default Videos
