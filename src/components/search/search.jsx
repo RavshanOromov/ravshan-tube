@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { Box, Container, Typography } from '@mui/material'
 import { colors } from '../../constants/colors'
 import { ApiService } from '../../service/api.service'
+import {Videos} from '../'
 
 const Search = () => {
   const [videos, setVideos] = useState([])
@@ -27,6 +28,7 @@ const Search = () => {
         <Typography variant={'h4'} fontWeight={'bold'} mb={2}>
           Search results for <span style={{color: colors.secondary}}>{id}</span> videos
         </Typography>
+        <Videos video={videos} />
       </Container>
 
     </Box>

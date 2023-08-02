@@ -30,7 +30,7 @@ const Channel = () => {
         <ChannelCard video={channelDetail} marginTop={'-100px'}  />
       </Box>
       <Container maxWidth={'90%'}>
-         <Videos videos={videos} />
+         <Videos video={videos} />
       </Container>
 
     </Box>

@@ -1,8 +1,11 @@
 import { Stack, Box} from '@mui/material'
-import { VideoCard, ChannelCard} from '..'
+import { VideoCard, ChannelCard, Loader } from '../'
 import React from 'react'
 
-const Videos = ({ videos }) => {
+const Videos = ({ video }) => {
+  if (!video.length) {
+    return <Loader />
+  }
   return (
    <Stack
      width={"100%"}
@@ -12,7 +15,7 @@ const Videos = ({ videos }) => {
      alignItems={'center'}
      gap={2}
    >
-    {videos.map((item) => (
+    {video.map((item) => (
       <Box key={item.id.videoId}>
          {item.id.videoId && <VideoCard video={item} />}
          {item.id.channelId && <ChannelCard video={item} />}
