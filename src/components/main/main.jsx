@@ -26,7 +26,7 @@ const Main = () => {
     console.log(error)
     }}
 
-  getData()}, [])
+  getData()}, [selectedCategory])
 
   return (
     <Stack>
@@ -38,7 +38,6 @@ const Main = () => {
           <Typography variant={'h4'} fontWeight={'bold'} mb={2}>
             {selectedCategory} <span style={{ color: colors.secondary }}>videos</span>
           </Typography>
-          videos
           <Videos videos={videos} />
           {/* {videos.items.map(c => c.kind)} */}
         </Container>
